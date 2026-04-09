@@ -60,7 +60,7 @@ nav ul a:hover { opacity: 1; }
 /* ── Hero ── */
 .hero {
   position: relative;
-  min-height: 100vh;
+  min-height: 150vh;
   display: flex;
   align-items: center;
   padding: 0 3rem;
@@ -71,10 +71,10 @@ nav ul a:hover { opacity: 1; }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('hero-bg.jpg');
+  background-image: url('hero-bg.jpg.png');
   background-size: cover;
   background-position: center top;
-  filter: blur(6px) brightness(0.25) saturate(0.6);
+  filter: blur(1px) brightness(0.6) saturate(0.6);
   transform: scale(1.05); /* prevents blur edge bleed */
   z-index: 0;
 }
@@ -489,9 +489,9 @@ footer {
 .ig-post {
   border-radius: 8px;
   overflow: hidden;
-  /* don't hide ig-post with reveal — Instagram needs visible DOM to render */
   opacity: 1 !important;
   transform: none !important;
+  max-height: 400px;
 }
 
 /* Instagram embeds render with white bg — wrap with subtle border */
@@ -560,4 +560,3 @@ footer {
   .shelf { grid-template-columns: 1fr; }
   .hero-actions { flex-direction: column; align-items: flex-start; }
 }
-
