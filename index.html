@@ -17,12 +17,14 @@
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#music">Music</a></li>
+      <li><a href="#instagram">Instagram</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
   <!-- Hero -->
   <section class="hero">
+    <div class="hero-bg"></div>
     <div class="hero-bg-text" aria-hidden="true">DAVIDI</div>
     <div class="hero-inner">
       <p class="hero-label">Fresh Kiddy &nbsp;·&nbsp; Musician &amp; Artist</p>
@@ -32,7 +34,7 @@
         <span class="line">and Soul.</span>
       </h1>
       <div class="hero-actions">
-        <a href="#music" class="cta">
+        <a href="https://vyd.co/roadone1942" target="_blank" rel="noopener noreferrer" class="cta">
           <span>Stream Now</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
@@ -96,6 +98,9 @@
           <h3>1942</h3>
           <p>Single · Spotify &amp; Apple Music</p>
           <div class="ep-links">
+            <a href="https://vyd.co/roadone1942" target="_blank" rel="noopener noreferrer" class="ep-link" style="color: var(--green); border-color: #1e1e1e;">
+              🎧 All Platforms
+            </a>
             <a href="https://open.spotify.com/album/1xDMP5jyXIyOs5ViFPljtV" target="_blank" rel="noopener noreferrer" class="ep-link spotify-link">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
               Spotify
@@ -166,9 +171,46 @@
     </div>
   </section>
 
+  <!-- Instagram -->
+  <section class="instagram" id="instagram">
+    <div class="music-header reveal">
+      <div class="section-number" aria-hidden="true">03</div>
+      <h2>Instagram</h2>
+    </div>
+    <div class="ig-grid">
+      <div class="ig-post">
+        <blockquote
+          class="instagram-media"
+          data-instgrm-permalink="https://www.instagram.com/p/DTA4SvJDdqp/?utm_source=ig_embed&utm_campaign=loading"
+          data-instgrm-version="14"
+        ></blockquote>
+      </div>
+      <div class="ig-post">
+        <blockquote
+          class="instagram-media"
+          data-instgrm-permalink="https://www.instagram.com/reel/DS_GVzbDWCk/?utm_source=ig_embed&utm_campaign=loading"
+          data-instgrm-version="14"
+        ></blockquote>
+      </div>
+      <div class="ig-post">
+        <blockquote
+          class="instagram-media"
+          data-instgrm-permalink="https://www.instagram.com/reel/DSN3CSGkiHS/?utm_source=ig_embed&utm_campaign=loading"
+          data-instgrm-version="14"
+        ></blockquote>
+      </div>
+    </div>
+    <div class="ig-follow reveal">
+      <a href="https://www.instagram.com/fr3shkiddy" target="_blank" rel="noopener noreferrer" class="cta cta-ghost">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        <span>@fr3shkiddy</span>
+      </a>
+    </div>
+  </section>
+
   <!-- Contact -->
   <section class="contact" id="contact">
-    <div class="section-number" aria-hidden="true">03</div>
+    <div class="section-number" aria-hidden="true">04</div>
     <div class="contact-body reveal">
       <h2>Let's Connect</h2>
       <p>Bookings, features, collabs — the door's open.</p>
@@ -183,5 +225,16 @@
   </footer>
 
   <script src="kiddy.js"></script>
+  <script>
+    // Load Instagram embed script after DOM is ready, then process embeds
+    window.addEventListener('load', function () {
+      var s = document.createElement('script');
+      s.src = 'https://www.instagram.com/embed.js';
+      s.onload = function () {
+        if (window.instgrm) window.instgrm.Embeds.process();
+      };
+      document.body.appendChild(s);
+    });
+  </script>
 </body>
 </html>
