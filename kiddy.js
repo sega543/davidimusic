@@ -1,3 +1,20 @@
+// Burger menu
+const burger = document.getElementById('burger');
+const navMenu = document.getElementById('nav-menu');
+
+burger.addEventListener('click', () => {
+  burger.classList.toggle('open');
+  navMenu.classList.toggle('open');
+});
+
+// Close menu when a link is tapped
+navMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    burger.classList.remove('open');
+    navMenu.classList.remove('open');
+  });
+});
+
 // Scroll reveal
 const observer = new IntersectionObserver(
   (entries) => entries.forEach(e => e.isIntersecting && e.target.classList.add('visible')),
