@@ -68,6 +68,17 @@ nav ul a:hover { opacity: 1; }
   overflow: hidden;
 }
 
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('hero-bg.jpg');
+  background-size: cover;
+  background-position: center top;
+  filter: blur(6px) brightness(0.25) saturate(0.6);
+  transform: scale(1.05); /* prevents blur edge bleed */
+  z-index: 0;
+}
+
 .hero-bg-text {
   position: absolute;
   right: -2rem;
@@ -77,17 +88,29 @@ nav ul a:hover { opacity: 1; }
   font-size: clamp(8rem, 22vw, 22rem);
   font-weight: 800;
   color: transparent;
-  -webkit-text-stroke: 1px #1c1c1c;
+  -webkit-text-stroke: 1px rgba(255,255,255,0.06);
   line-height: 1;
   pointer-events: none;
   user-select: none;
   white-space: nowrap;
+  z-index: 2;
 }
 
 .hero-inner {
   position: relative;
-  z-index: 1;
+  z-index: 3;
   max-width: 800px;
+}
+
+/* dark gradient overlay on top of blurred bg */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to right, rgba(8,8,8,0.9) 35%, rgba(8,8,8,0.5) 100%),
+    radial-gradient(ellipse at 20% 50%, rgba(0,229,160,0.06) 0%, transparent 60%);
+  z-index: 1;
 }
 
 .hero-label {
@@ -222,7 +245,7 @@ nav ul a:hover { opacity: 1; }
 /* ── Spotify embed ── */
 .spotify-embed {
   max-width: 1100px;
-  margin: 0 auto 3rem;
+  margin: 0 auto 1.5rem;
   border-radius: 12px;
   overflow: hidden;
   border: 1px solid var(--border);
@@ -237,9 +260,9 @@ nav ul a:hover { opacity: 1; }
 .music-header {
   display: flex;
   align-items: flex-end;
-  gap: 1.5rem;
+  gap: 0.5rem;
   max-width: 1100px;
-  margin: 0 auto 4rem;
+  margin: 0 auto 1.5rem;
 }
 
 .section-number {
@@ -449,6 +472,53 @@ footer {
   text-transform: uppercase;
 }
 
+/* ── Instagram ── */
+.instagram {
+  padding: 8rem 3rem;
+  border-top: 1px solid var(--border);
+}
+
+.ig-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto 2.5rem;
+}
+
+.ig-post {
+  border-radius: 8px;
+  overflow: hidden;
+  /* don't hide ig-post with reveal — Instagram needs visible DOM to render */
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Instagram embeds render with white bg — wrap with subtle border */
+.ig-post .instagram-media {
+  border-radius: 8px !important;
+  min-width: unset !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+.ig-follow {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .ig-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 560px) {
+  .ig-grid { grid-template-columns: 1fr; }
+  .instagram { padding: 5rem 1.5rem; }
+}
+
 /* ── Reveal animation ── */
 .reveal {
   opacity: 0;
@@ -490,3 +560,4 @@ footer {
   .shelf { grid-template-columns: 1fr; }
   .hero-actions { flex-direction: column; align-items: flex-start; }
 }
+
