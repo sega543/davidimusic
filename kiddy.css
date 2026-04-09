@@ -19,6 +19,8 @@ body {
   overflow-x: hidden;
 }
 
+* { max-width: 100%; }
+
 /* ── Nav ── */
 nav {
   position: fixed;
@@ -27,8 +29,10 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.25rem 3rem;
+  padding: 1.25rem 2rem;
   mix-blend-mode: difference;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .nav-logo {
@@ -476,6 +480,7 @@ footer {
 .instagram {
   padding: 8rem 3rem;
   border-top: 1px solid var(--border);
+  overflow: hidden;
 }
 
 .ig-grid {
@@ -604,6 +609,9 @@ footer {
 
   .music { padding: 5rem 1.5rem; }
   .music-header { margin-bottom: 2rem; }
+
+  .instagram { padding: 5rem 1.5rem; }
+  .ig-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
 
   .shelf { grid-template-columns: repeat(2, 1fr); }
 
